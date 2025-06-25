@@ -1,18 +1,43 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "strict": true,
+    "target": "esnext", // Or "esnext" for the latest features
+    "module": "esnext",
+    "lib": [
+      "es2019",
+      "dom"
+    ], // 'dom' is needed for JSX types
+    "jsx": "react-native", // Crucial for React Native JSX
+    "allowJs": true, // Allow JavaScript files in your project
+    "skipLibCheck": true, // Skip type checking of declaration files
+    "esModuleInterop": true, // Enable compatibility for default imports
+    "allowSyntheticDefaultImports": true, // Allow default imports from modules with no default export
+    "strict": true, // Enable all strict type-checking options
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true, // Do not emit output files, Babel handles this
+    "resolveJsonModule": true,
+    "isolatedModules": true, // Import"strict": true,
     "paths": {
       "@/*": [
         "./*"
       ]
-    }
+    },
+    "customConditions": [
+      "react-native-strict-api"
+    ]
   },
   "include": [
     "**/*.ts",
     "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts",
-    "nativewind-env.d.ts"
-  ]
+    "nativewind-env.d.ts",
+  ],
+  "exclude": [
+    "node_modules",
+    "babel.config.js",
+    "metro.config.js",
+    "jest.config.js",
+    "tailwind.config.js"
+  ],
 }
