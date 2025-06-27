@@ -1,7 +1,7 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "target": "esnext", // Or "esnext" for the latest features
+    "target": "esnext",
     "module": "esnext",
     "lib": [
       "es2019",
@@ -18,9 +18,21 @@
     "resolveJsonModule": true,
     "isolatedModules": true, // Import"strict": true,
     "paths": {
+      "@assets/*": [
+        "./assets/*"
+      ],
+      "@constants/*": [
+        "./constants/*"
+      ],
+      "@hooks/*": [
+        "./hooks/*"
+      ],
+      "@lib/*": [
+        "./lib/*"
+      ],
       "@/*": [
         "./*"
-      ]
+      ],
     },
     "customConditions": [
       "react-native-strict-api"

@@ -1,3 +1,4 @@
+import PowerSensorCard from "@/components/app/PowerSensorCard";
 import PumpCard from "@/components/app/PumpCard";
 import SensorCard from "@/components/app/SensorCard";
 import { ThemedText } from "@/components/ThemedText";
@@ -52,7 +53,7 @@ export default function HomeScreen() {
             </ThemedText>
           </View>
         </ThemedView>
-        <ThemedText className="font-bold text-2xl my-6">Sensors</ThemedText>
+        <ThemedText className="header-text">Sensors</ThemedText>
         <View className="flex flex-row justify-evenly gap-4 w-full">
           <SensorCard
             sensorName="Moisture sensor 1"
@@ -87,8 +88,8 @@ export default function HomeScreen() {
             iconOne="wind"
           />
         </View>
-        <ThemedText className="font-bold text-2xl my-6">Water Pumps</ThemedText>
-        <View className="flex flex-col gap-3">
+        <ThemedText className="header-text">Water Pumps</ThemedText>
+        <View className="flex flex-col gap-3 mb-8">
           <PumpCard id={1} mode="auto" state="active" nextSchedule="8:00 AM" />
           <PumpCard
             id={2}
@@ -98,6 +99,7 @@ export default function HomeScreen() {
           />
           <PumpCard id={3} mode="manual" state="idle" nextSchedule="8:00 AM" />
         </View>
+        <PowerSensorCard />
       </ScrollView>
     </SafeAreaView>
   );

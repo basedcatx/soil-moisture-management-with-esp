@@ -1,10 +1,10 @@
 import TabBarBackground from "@/components/ui/TabBarBackground";
 import { Colors } from "@/constants/Colors";
-import { useColorScheme } from "@/hooks/useColorScheme";
 import Feather from "@expo/vector-icons/Feather";
 import { Tabs } from "expo-router";
 import React from "react";
-import { Platform } from "react-native";
+import { Platform, useColorScheme } from "react-native";
+
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();

@@ -13,21 +13,21 @@ const PumpCard = ({ id, mode, state, nextSchedule }: Props) => {
   const calculateStateColor = (state: string) => {
     switch (state) {
       case "scheduled":
-        return "bg-green-500/50";
+        return "bg-green-500";
       case "idle":
         return "bg-[#80c9c0]";
       case "active":
-        return "bg-blue-500/50";
+        return "bg-blue-500";
     }
   };
   const calculateStateTextColor = (state: string) => {
     switch (state) {
       case "scheduled":
-        return "text-green-800";
+        return "text-green-900";
       case "idle":
-        return "text-[#16897a]";
+        return "text-[#17897a]";
       case "active":
-        return "text-blue-800";
+        return "text-blue-900";
     }
   };
   return (
