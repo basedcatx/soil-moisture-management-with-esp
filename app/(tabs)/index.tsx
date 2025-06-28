@@ -11,6 +11,7 @@ import { ScrollView, View } from "react-native";
 import { cssInterop } from "react-native-css-interop";
 import { SafeAreaView } from "react-native-safe-area-context";
 
+// This project was just for the purpose of experimenting with react-native, as i didn't consider any proper design systems or modularity, or recommended type safety code. It was just a project to get familiar with the react native apis.
 export default function HomeScreen() {
   const [isConnected, setIsConnected] = useState<boolean>(false);
   const [sensors, setSensors] = useState<SensorStates>({

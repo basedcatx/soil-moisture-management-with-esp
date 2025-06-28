@@ -12,3 +12,11 @@ interface PumpWaterScheduleInterface {
   duration: string;
   days: string[];
 }
+
+interface WaterPumpScheduleInterface {
+  name: string;
+  pump: string;
+  time: string;
+  duration: string;
+  days: string[];
+}
