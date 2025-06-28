@@ -3,10 +3,12 @@ import PumpCard from "@/components/app/PumpCard";
 import SensorCard from "@/components/app/SensorCard";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
+import Feather from "@expo/vector-icons/Feather";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import Octicons from "@expo/vector-icons/Octicons";
 import { useState } from "react";
 import { ScrollView, View } from "react-native";
+import { cssInterop } from "react-native-css-interop";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function HomeScreen() {
@@ -19,19 +21,23 @@ export default function HomeScreen() {
     tempSensor: "warning",
   });
 
+  cssInterop(Feather, {
+    className: "style",
+  });
+
   return (
     <SafeAreaView className="mx-[16px]">
       <ScrollView
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
       >
-        <ThemedView className="mt-3 relative rounded-md p-4 flex gap-2 shadow-black shadow-[2px]">
+        <ThemedView className="mt-3 relative rounded-md p-4 flex gap-2 shadow-black shadow-[2px] items-center justify-center">
           <ThemedView className="ml-auto bg-black h-7 rounded-md px-1 justify-start relative items-center flex flex-row gap-2">
             <Octicons
               name="dot-fill"
               size={24}
               color={isConnected ? "green" : "darkred"}
-              className="ease-in-out"
+              className="animate-pulse duration-1000 ease-linear"
             />
             <ThemedText>{isConnected ? "Online" : "Offline"}</ThemedText>
           </ThemedView>

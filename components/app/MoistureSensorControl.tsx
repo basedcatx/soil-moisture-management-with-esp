@@ -3,7 +3,7 @@ import { useState } from "react";
 import { View } from "react-native";
 import { ThemedText } from "../ThemedText";
 export const MoistureSensorControl = ({ id }: { id: string }) => {
-  const [moisture, setMoisture] = useState(Math.random() * 100);
+  const [moisture, setMoisture] = useState(30);
 
   return (
     <View className="flex flex-1 flex-col gap-3">

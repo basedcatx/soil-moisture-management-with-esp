@@ -1,6 +1,6 @@
 import { useThemeColor } from "@/hooks/useThemeColor";
 import { useState } from "react";
-import { TouchableOpacity, useColorScheme, View } from "react-native";
+import { TouchableOpacity, View } from "react-native";
 import { ThemedText } from "../ThemedText";
 import AutoModControlCard from "./AutoModeControlCard";
 import ManualModeControlCard from "./ManualModControlCard";
@@ -9,7 +9,6 @@ type ModeProp = "manual" | "auto";
 
 const SettingsPumpControlCard = () => {
   const [mode, setMode] = useState<ModeProp>("manual");
-  const theme = useColorScheme();
   const borderColor = useThemeColor({}, "tint");
   return (
     <View>
@@ -41,7 +40,7 @@ const SettingsPumpControlCard = () => {
           ? "Pumps will activate automatically based on moisture thresholds"
           : "Manual control of individual water pumps"}
       </ThemedText>
-      <View className="bg-black/15 mt-4">
+      <View className="mt-4">
         {mode === "auto" ? <AutoModControlCard /> : <ManualModeControlCard />}
       </View>
     </View>

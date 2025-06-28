@@ -1,11 +1,11 @@
 import SettingsDarkModeToggle from "@/components/app/SettingsDarkModeToggle";
 import SettingsPumpControlCard from "@/components/app/SettingsPumpControlCard";
+import { SettingsPumpWaterSchedule } from "@/components/app/SettingsPumpWaterSchedule";
 import { Collapsible } from "@/components/Collapsible";
-import { ScrollView, useColorScheme } from "react-native";
+import { ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function TabTwoScreen() {
-  const theme = useColorScheme();
   return (
     <SafeAreaView className="mx-[16px] my-[32px]">
       <ScrollView>
@@ -21,7 +21,7 @@ export default function TabTwoScreen() {
         </Collapsible>
 
         <Collapsible title="Water Schedules" icon="clock" color={"lightblue"}>
-          <SettingsPumpControlCard />
+          <SettingsPumpWaterSchedule />
         </Collapsible>
       </ScrollView>
     </SafeAreaView>
